@@ -32,4 +32,4 @@ jobs:
         run: sudo apt install wput
 
       - name: Push to server
-        run: wput ./out/index.html ftp://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@{{ vars.URL }}/site/wwwroot/
+        run: wput ./out/index.html ftp://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@${{ vars.URL }}/site/wwwroot/
