@@ -14,7 +14,10 @@ void main(List<String> arguments) async {
     path.join(Directory.current.path, "assets", "home.html"),
   ).readAsString();
 
-  final out = File(path.join(Directory.current.path, "out", "index.html"));
+  final outDir = Directory(path.join(Directory.current.path, "out"));
+  await outDir.create();
+  
+  final out = File(path.join(outDir.path, "index.html"));
 
   final body = md.markdownToHtml(markdown);
   output = output.replaceFirst("<!--body-->", body);
